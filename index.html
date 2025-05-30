@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to bottom right, #000000, #5e3a87); /* تدرج أسود لبنفسجي */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    .skull {
+      position: absolute;
+      top: -34px;
+      left: -42px;
+      width: 91px;
+      transform: rotate(-25deg);
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    button {
+      margin: 12px;
+      padding: 14px 24px;
+      font-size: 17px;
+      border: none;
+      border-radius: 14px;
+      background-color: #a066cc;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #8e4bb3;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message {
+      font-size: 17px;
+      color: #fff;
+      margin-top: 20px;
+      white-space: pre-line;
+      line-height: 1.7;
+    }
+
+    h2, p {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="step1">
+      <img src="adam.png" alt="skull" class="skull">
+      <h2>💭 يادراا كيفاه كان نهارك؟</h2>
+      <button onclick="sadDay()">كان حزين</button>
+      <button onclick="happyDay()">كان سعيد</button>
+    </div>
+
+    <div id="step2-sad" class="hidden">
+      <p>🕊 ماشي مشكل، كل يوم جديد هو فرصة جديدة</p>
+      <button onclick="showCelebrateSad()">نزيد نفرحوك</button>
+    </div>
+
+    <div id="step3-sad" class="hidden">
+      <p>🎀 يلا نعملو جو</p>
+      <button onclick="showFinalMessage()">اضغط هنا</button>
+    </div>
+
+    <div id="step2-happy" class="hidden">
+      <p>🌼 و هكا لازم، خلي ديما البسمة في وجهك</p>
+      <button onclick="showCelebrateHappy()">نكملو الفرحة</button>
+    </div>
+
+    <div id="final-message" class="hidden message">
+      ياه كيفاه فاتو سنين بلخف هك 6 سنين ديجا فاتو صح 
+كنت باغيا نكتبلك رسالة و كذا بصح قلت علاه منعبرش هك احسن  
+يامات جراو بلخف و هاهو عيد ميلادك جا تان  
+قد ما نشكرك قليل والله لعبنا ضحكنا و عندي ذكريات يهبلو هنا و ليوم غادي نقولك 
+happy birthdayyy adammm kol 3am we nta bkhir 
+
+نعرفك تبغي الفيولي و الكحل ايا درتلك الثيم هك مع الجماجم كنت باغيا نديرلك ما كثر بصحح مزالني مبتداة فلمواقع ايااا
+نتمنالك عيد سعيد كيما القط لي يكون راقد و يتمدد 
+      • ناعم،  
+      • دافي،  
+      • وهادي.
+
+      نتمنى كل لحظة تمر عليك اليوم تكون فيها مرتاح و فرحان و نتمنالك كل الخير في حياتك و فمستقبلك نتا انسان طموح بزاف ايااا نتمنالك تحقق كامل لي باغيه 
+      🎈هابي بيرثدايي ادمم تبقى دايمًا بخير وربي يحققلك كل أمنياتك. 
+
+من ليلوش.
+    </div>
+  </div>
+
+  <script>
+    function sadDay() {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2-sad').classList.remove('hidden');
+    }
+
+    function showCelebrateSad() {
+      document.getElementById('step2-sad').classList.add('hidden');
+      document.getElementById('step3-sad').classList.remove('hidden');
+    }
+
+    function showCelebrateHappy() {
+      document.getElementById('step2-happy').classList.add('hidden');
+      document.getElementById('final-message').classList.remove('hidden');
+    }
+
+    function happyDay() {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2-happy').classList.remove('hidden');
+    }
+
+    function showFinalMessage() {
+      document.getElementById('step3-sad').classList.add('hidden');
+      document.getElementById('final-message').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
